@@ -28,7 +28,7 @@ export default function App() {
       <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
         <div className="glass px-2 py-1.5 rounded-full flex items-center gap-1">
           <div className="w-7 h-7 rounded-full overflow-hidden border border-white/60 shadow-sm flex-shrink-0 mx-1">
-            <img src="/avatar.jpg" alt="Avatar" className="w-full h-full object-cover" />
+            <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="Avatar" className="w-full h-full object-cover" />
           </div>
           <div className="w-px h-4 bg-black/10 mx-0.5" />
           {(['home', 'blog', 'projects'] as Section[]).map((section) => (
@@ -101,10 +101,10 @@ function Home({ onNavigate }: { onNavigate: (s: Section) => void }) {
       {/* Image Gallery */}
       <section className="mb-20 -mx-6 overflow-x-auto no-scrollbar flex gap-4 px-6">
         {[
-          { src: '/photo1.jpg', alt: '雪山湖泊' },
-          { src: '/photo2.jpg', alt: '演讲比赛' },
-          { src: '/photo3.jpg', alt: '与狗狗在山间' },
-          { src: '/photo4.jpg', alt: '俯瞰城市风景' }
+          { src: `${import.meta.env.BASE_URL}photo1.jpg`, alt: '雪山湖泊' },
+          { src: `${import.meta.env.BASE_URL}photo2.jpg`, alt: '演讲比赛' },
+          { src: `${import.meta.env.BASE_URL}photo3.jpg`, alt: '与狗狗在山间' },
+          { src: `${import.meta.env.BASE_URL}photo4.jpg`, alt: '俯瞰城市风景' }
         ].map((img, i) => (
           <div key={i} className="flex-shrink-0 w-72 h-48 rounded-2xl overflow-hidden shadow-sm rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
             <img
